@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>The game</title>
+</head>
+<body>
+    <form action ="/madlib">
+        Tell me a person's name <input type="text" name="person">
+        <br>
+        
+        <ul>
+            Tell me a color 
+            {% for color in colors %}
+                <input type="radio" name="color" value="{{color}}">{{color}}
+            {% endfor %}
+        </ul>
+        <ul>
+            Tell me a noun 
+            {% for noun in nouns %}
+                <input type="checkbox" name="noun" value="{{noun}}">{{noun}}
+            {% endfor %}
+        </ul>
+        <ul>
+            Tell me an adjective
+            <select name="adjective">
+            {% for adjective in adjectives %}
+                <li><option value = "{{adjective}}">{{adjective}}</option></li>
+            {% endfor %}
+            </select>
+        </ul>
+        <input type="submit">
+    </form>
+
+</body>
+</html>
